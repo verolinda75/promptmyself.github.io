@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 100%, 100%);
+  padding: 20px;
+  font-family: Helvetica;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: hsl(0, 0%, 90%);
+  padding: 10px;
+  width: 300px;
+  height: 400px;
+  box-sizing: border-box;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: grey;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: grey;
+}
+
+.btn.active {
+  background-color: grey;
+  color: grey;
+}
+</style>
+</head>
+<body>
+<meta name="description" content="Prompt Myself">
+<!-- MAIN (Center website) -->
+<div class="main">
+ <meta name="keywords" content="HTML, Java, IBM, American Airlines">
+<h1>VERONICA DAVILA</h1>
+<hr>
+<meta name="author" content="Veronica Davila">
+<h2>PORTFOLIO</h2>
+<P>Welcome to my website.</P>
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+
+<div class="column cars">
+    <div class="content">
+    <img src="hdit.jpg" alt="IT Help Desk" style="width:100%">
+      <h4>Help Desk</h4>
+      <p>I accetped an intership at American Airlines for IT help desk. I'm going to be helping people who forgot their passwords or need help into logging in their account.</p>
+    </div>
+  </div>
+
+  <div class="column cars">
+    <div class="content">
+      <img src="aa.jpg" alt="AA" style="width:100%">
+      <h4>American Airlines</h4>
+      <p>I was offered an intership at American Airlines for help desk. I'm going to start this summer! I'm so excited. I'm going to be helping Flight Attendants! I can't wait to see them in action.</p>
+    </div>
+  </div>
+
+ <div class="column cars">
+    <div class="content">
+    <img src="helpd2.jpg" alt="Help Desk" style="width:100%">
+      <h4>Help Desk at American Airlines</h4>
+      <p>People that work IT in American Airlines get to travel and work at the same time! I'm ready to start working and being on vacation!</p>
+    </div>
+  </div>
+
+  <div class="column cars">
+    <div class="content">
+      <img src="coding.jpg" alt="Java" style="width:100%">
+      <h4>Java</h4>
+      <p>One of the programming languages I know is Java. I'm in a Android class creating apps for Windows.</p>
+    </div>
+  </div>
+
+  <div class="column cars">
+    <div class="content">
+    <img src="html2.jpg" alt="HTML" style="width:100%">
+      <h4>HTML</h4>
+      <p>I use HTML to build webites like this one. It also helps me with program when I'm using JavaScript.</p>
+    </div>
+  </div>
+
+  <div class="column cars">
+    <div class="content">
+    <img src="c++2.jpg" alt="C++" style="width:100%">
+      <h4>C++</h4>
+      <p>I use C++ from time to time. I want to get in more depth.</p>
+    </div>
+  </div>
+  
+  <div class="column cars">
+    <div class="content">
+      <img src="webd.jpg" alt="Web" style="width:100%">
+      <h4>WebDesign</h4>
+      <p>This is the third website I will be creating.</p>
+    </div>
+  </div>
+
+  <div class="column cars">
+    <div class="content">
+    <img src="cyber.jpg" alt="CyberSecurity" style="width:100%">
+      <h4>Cyber</h4>
+      <p>I have a certification of CyberSeurity. I recently also got a certification on Special Topics-The Internet of Things.</p>
+    </div>
+  </div>
+
+  <div class="column cars">
+    <div class="content">
+    <img src="ibm2.jpg" alt="IBM" style="width:100%">
+      <h4>IBM</h4>
+      <p>I was offered an intership at IBM to build projects.</p>
+    </div>
+  </div>
+
+<P>
+<p style="color:Black;">Connect with me</p>
+</P>
+
+<p>
+<a href="https://www.youtube.com/channel/UCmqf_lSI1I84-ELJ7NfdKJA">My Youtube Link</a>
+</P>
+
+<p>
+<a href="mailto:veronicadavila700@gmail.com">veronicadavila700@gmail.com</a>
+</p>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
